@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "wanderingplanets:item/geothermal_etchant_bucket"
+  }
+}

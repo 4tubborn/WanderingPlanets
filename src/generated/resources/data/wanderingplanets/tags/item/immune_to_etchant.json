@@ -1,0 +1,33 @@
+{
+  "values": [
+    "minecraft:obsidian",
+    "minecraft:crying_obsidian",
+    "minecraft:bedrock",
+    "minecraft:bedrock",
+    "minecraft:ancient_debris",
+    "minecraft:heavy_core",
+    "minecraft:netherite_block",
+    "minecraft:obsidian",
+    "minecraft:reinforced_deepslate",
+    "minecraft:enchanting_table",
+    "minecraft:end_portal_frame",
+    "minecraft:command_block",
+    "minecraft:anvil",
+    "minecraft:chipped_anvil",
+    "minecraft:damaged_anvil",
+    "minecraft:barrier",
+    "minecraft:light",
+    "minecraft:repeating_command_block",
+    "minecraft:chain_command_block",
+    "minecraft:structure_block",
+    "minecraft:jigsaw",
+    "minecraft:crying_obsidian",
+    "minecraft:respawn_anchor",
+    "minecraft:trial_spawner",
+    "minecraft:vault",
+    "northstar:monolithite",
+    "create:netherite_backtank_placeable",
+    "create:item_vault",
+    "wanderingplanets:etched_bedrock"
+  ]
+}

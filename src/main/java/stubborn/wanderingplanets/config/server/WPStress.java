@@ -1,0 +1,58 @@
+package stubborn.wanderingplanets.config.server;
+
+import com.simibubi.create.infrastructure.config.CStress;
+import com.tterrag.registrate.builders.BlockBuilder;
+import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
+import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
+import it.unimi.dsi.fastutil.objects.Object2DoubleOpenHashMap;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import stubborn.wanderingplanets.CreateWanderingPlanets;
+
+public class WPStress extends CStress {
+
+    private static final Object2DoubleMap<ResourceLocation> DEFAULT_IMPACTS = new Object2DoubleOpenHashMap<>();
+    private static final Object2DoubleMap<ResourceLocation> DEFAULT_CAPACITIES = new Object2DoubleOpenHashMap<>();
+
+    @Override
+    public void registerAll(ModConfigSpec.Builder builder) {
+        builder.comment(".", Comments.su, Comments.impact).push("impact");
+        DEFAULT_IMPACTS.forEach((id, value) -> this.impacts.put(id, builder.define(id.getPath(), value)));
+        builder.pop();
+
+        builder.comment(".", Comments.su, Comments.capacity).push("capacity");
+        DEFAULT_CAPACITIES.forEach((id, value) -> this.capacities.put(id, builder.define(id.getPath(), value)));
+        builder.pop();
+    }
+
+    public static <B extends Block, P> NonNullUnaryOperator<BlockBuilder<B, P>> setNoImpact() {
+        return setImpact(0.0F);
+    }
+
+    public static <B extends Block, P> NonNullUnaryOperator<BlockBuilder<B, P>> setImpact(final double value) {
+        return (builder) -> {
+            assertFromWP(builder);
+            return builder;
+        };
+    }
+
+    public static <B extends Block, P> NonNullUnaryOperator<BlockBuilder<B, P>> setCapacity(final double value) {
+        return (builder) -> {
+            assertFromWP(builder);
+            return builder;
+        };
+    }
+
+    private static void assertFromWP(final BlockBuilder<?, ?> builder) {
+        if (!builder.getOwner().getModid().equals(CreateWanderingPlanets.MODID)) {
+            throw new IllegalStateException("Non-wanderingplanets blocks cannot be added to wanderingplanets's config.");
+        }
+    }
+
+    private static class Comments {
+        static String su = "[in Stress Units]";
+        static String impact = "Configure the individual stress impact of mechanical blocks. Note that this cost is doubled for every speed increase it receives.";
+        static String capacity = "Configure how much stress a source can accommodate for.";
+    }
+}

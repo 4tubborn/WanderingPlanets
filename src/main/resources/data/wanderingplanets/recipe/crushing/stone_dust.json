@@ -1,0 +1,14 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "wanderingplanets:stone_dust_ingredient"
+    }
+  ],
+  "processing_time": 250,
+  "results": [
+    {
+      "id": "wanderingplanets:stone_dust"
+    }
+  ]
+}

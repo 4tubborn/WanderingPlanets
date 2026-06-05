@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "create:powdered_obsidian"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:lava"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "wanderingplanets:geothermal_etchant"
+    }
+  ]
+}

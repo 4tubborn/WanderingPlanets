@@ -1,0 +1,21 @@
+{
+  "values": [
+    "#create:stone_types/andesite",
+    "#create:stone_types/asurine",
+    "#create:stone_types/calcite",
+    "#create:stone_types/crimsite",
+    "#create:stone_types/deepslate",
+    "#create:stone_types/diorite",
+    "#create:stone_types/dripstone",
+    "#create:stone_types/granite",
+    "#create:stone_types/limestone",
+    "#create:stone_types/ochrum",
+    "#create:stone_types/scorchia",
+    "#create:stone_types/scoria",
+    "#create:stone_types/tuff",
+    "#create:stone_types/veridium",
+    "#c:cobblestones",
+    "#c:stones",
+    "minecraft:blackstone"
+  ]
+}
